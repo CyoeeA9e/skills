@@ -253,24 +253,6 @@ codegen-units = 1
 
 ## Code Style
 
-### Code Organization
-
-Never using `mod.rs`.
-
-```
-// Good
-|- server.rs
-|- server
-|--- http.rs
-
-// Bad
-|- server
-|--- mod.rs
-|--- http.rs
-```
-
-
-
 ### Early Return
 
 Prefer returning early from functions rather than deep nesting with `else`:
@@ -449,7 +431,8 @@ let config = Config::new(
 
 ## Code Organization
 
-- One module per file, declared in `lib.rs` or `mod.rs`
+- One module per file, declared in `lib.rs` or `<MOD_NAME>.rs`
+- Never use `mod.rs`
 - `pub use` to re-export public API
 - Keep modules focused and small
 - Put types near where they're used
